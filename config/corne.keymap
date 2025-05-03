@@ -24,7 +24,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        layer_0 {
             // -----------------------------------------------------------------------------------------
             // | TAB  |  Q  |  W  |  E  |  R  |    T    |   |  Y  |  U   |  I  |  O  |  P  | ESC |
             // | CTRL |  A  |  S  |  D  |  F  |    G    |   |  H  |  J   |  K  |  L  |  ;  |  LWR/'   |
@@ -32,14 +32,14 @@
             //                    | GUI | LWR | ALT/ENT |   | HYPER/SPC | BKSP  | RSE |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y      &kp U  &kp I         &kp O    &kp P     &kp BACKSPACE
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H      &kp J  &kp K         &kp L    &kp SEMI  &lt 1 SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N      &kp M  &kp COMMA     &kp DOT  &kp FSLH  &kp ESCAPE
-                         &kp LGUI  &mo 1  &kp SPACE    &kp ENTER  &mo 2  &kp LEFT_ALT
+&kp TAB       &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y      &kp U  &kp I           &kp O    &kp P     &kp BACKSPACE
+&kp LCTRL     &kp A  &kp S  &kp D     &kp F  &kp G        &kp H      &kp J  &kp K           &kp L    &kp SEMI  &lt 1 SQT
+&kp LEFT_ALT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N      &kp M  &kp COMMA       &kp DOT  &kp FSLH  &kp ESCAPE
+                            &kp LGUI  &mo 1  &kp SPACE    &kp ENTER  &mo 2  &kp LEFT_SHIFT
             >;
         };
 
-        layer_below {
+        layer_1 {
             // -----------------------------------------------------------------------------------------
             // |      |  !  |  @  |  #  |  $  |    %     |   |  ^  |  &  |  *  |  (  |  )  |   \   |
             // |      |  1  |  2  |  3  |  4  |    5     |   |  -  |  =  |  `  |  [  |  ]  |  "|"  |
@@ -47,14 +47,14 @@
             //                     | GUI |     | ALT/ENT |   | HYPER/SPACE | BKSP |    |
 
             bindings = <
-&trans     &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT       &kp CARET                   &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSLH
-&trans     &kp N1    &kp N2  &kp N3    &kp N4    &kp N5          &kp MINUS                   &kp EQUAL  &kp GRAVE        &kp LBKT  &kp RBKT  &kp PIPE
-&kp LSHFT  &kp N6    &kp N7  &kp N8    &kp N9    &kp N0          &kp UNDER                   &kp PLUS   &kp TILDE        &kp LBRC  &kp RBRC  &kp RSHFT
-                             &kp LGUI  &trans    &tp LALT RET    &tp LC(LS(LA(LGUI))) SPACE  &kp BSPC   &trans
+&kp TAB       &kp EXCL       &kp AT                &kp HASH          &kp DLLR        &kp PRCNT               &kp CARET  &kp AMPS         &kp ASTERISK       &trans                 &trans            &trans
+&kp LCTRL     &kp LESS_THAN  &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp NON_US_BACKSLASH    &kp SLASH  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN  &kp SQT
+&kp LEFT_ALT  &trans         &trans                &trans            &trans          &trans                  &kp UNDER  &kp MINUS        &kp PLUS           &kp EQUAL              &trans            &kp TILDE
+                                                   &kp LGUI          &trans          &kp SPACE               &kp ENTER  &mo 3            &kp LSHIFT
             >;
         };
 
-        layer_above {
+        layer_2 {
             // -----------------------------------------------------------------------------------------
             // |       |  F1  |  F2  |  F3  |  F4  |  F5 |            |  F6  |  F7  |  F8  |  F9  |  F10  |   |
             // |       | Prev | Next | Vol - | Vol + | Play/Pause |   |      | LFT | DWN |  UP | RGT |     |     |
@@ -62,10 +62,19 @@
             //                    |     |     |    |                  |     |     |     |
 
             bindings = <
-&trans      &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6    &kp F7    &kp F8  &kp F9     &kp F10  &trans
-&trans      &kp C_PREV    &kp C_NEXT    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP        &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans   &trans
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans    &trans    &trans  &trans     &trans   &trans
-                                        &trans        &trans        &trans          &trans    &trans    &trans
+&trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4  &kp N5       &kp NUMBER_6  &kp N7    &kp N8          &kp N9     &kp N0  &trans
+&kp LCTRL     &trans        &trans        &trans         &trans        &trans       &kp LEFT      &kp DOWN  &kp UP          &kp RIGHT  &trans  &trans
+&kp LEFT_ALT  &trans        &trans        &trans         &trans        &trans       &trans        &trans    &trans          &trans     &trans  &trans
+                                          &kp LEFT_META  &mo 3         &kp SPACE    &kp ENTER     &trans    &kp LEFT_SHIFT
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&trans      &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp PRINTSCREEN
+&trans      &kp C_PREV    &kp C_NEXT    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP        &trans  &trans  &trans  &trans  &trans   &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans   &trans
+                                        &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
     };
